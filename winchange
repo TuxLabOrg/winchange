@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+PROTON_STEAM="${STEAM_COMPAT_TOOL_PATHS%%:*}"
+"${PROTON_STEAM:-$PROTONPATH}/proton" run reg add "HKEY_CURRENT_USER\Software\Wine" /v Version /t REG_SZ /d win11 /f 2>/dev/null
+
+env "${@}"
